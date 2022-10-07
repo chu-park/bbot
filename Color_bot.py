@@ -20,6 +20,11 @@ async def on_ready():
 @client.command()
 async def 염색(ctx):
   a, b, c = ctx.send.split(".")
+  
+  await ctx.channel.send(a)
+  await ctx.channel.send(b)
+  await ctx.channel.send(c)
+
       
 
 client.run(os.environ['token'])
