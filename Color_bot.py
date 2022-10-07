@@ -7,6 +7,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--no-sandbox")
+
 client = commands.Bot(command_prefix='/', intents=discord.Intents.all())
 
 @client.event
@@ -34,8 +39,9 @@ async def 염색(ctx, *, txt):
   query_txt_2 = b
   query_txt_3 = c
 
-  path = (r"C:\Users\sa485\OneDrive\Desktop\test\chromedriver.exe")
-  driver = webdriver.Chrome(path)
+  #path = (r"C:\Users\sa485\OneDrive\Desktop\test\chromedriver.exe")
+  chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+  driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
   driver.get("https://harp.fantazm.net/dye")
   time.sleep(2)
