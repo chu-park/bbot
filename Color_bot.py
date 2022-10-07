@@ -18,9 +18,9 @@ async def on_ready():
   print("봇 이름:",client.user.name,"봇 아이디:",client.user.id,"봇 버전:",discord.__version__)
 
 @client.command()
-async def 염색(ctx):
-  a, b, c = ctx.send.split(".")
-  
+async def 염색(ctx, *, txt):
+  a, b, c = txt.split(".")
+
   await ctx.channel.send(a)
   await ctx.channel.send(b)
   await ctx.channel.send(c)
