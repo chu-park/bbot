@@ -14,8 +14,6 @@ chrome_options.add_argument("--no-sandbox")
 
 chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
-
 client = commands.Bot(command_prefix='/', intents=discord.Intents.all())
 
 @client.event
@@ -38,6 +36,8 @@ async def 염색(ctx, *, txt):
   #await ctx.channel.send(a)
   #await ctx.channel.send(b)
   #await ctx.channel.send(c)
+
+  driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
   query_txt_1 = a
   query_txt_2 = b
