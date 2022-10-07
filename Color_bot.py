@@ -3,16 +3,16 @@ from discord.ext import commands
 import os
 import time
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+#from selenium import webdriver
+#from selenium.webdriver.common.by import By
+#from selenium.webdriver.common.keys import Keys
 
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-gpu")
-chrome_options.add_argument("--no-sandbox")
+#chrome_options = webdriver.ChromeOptions()
+#chrome_options.add_argument("--headless")
+#chrome_options.add_argument("--disable-gpu")
+#chrome_options.add_argument("--no-sandbox")
 
-chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+#chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 
 client = commands.Bot(command_prefix='/', intents=discord.Intents.all())
 
@@ -33,13 +33,13 @@ async def on_ready():
 async def 염색(ctx, *, txt):
   a, b, c = txt.split(".")
 
-  #await ctx.channel.send(a)
-  #await ctx.channel.send(b)
-  #await ctx.channel.send(c)
+  await ctx.channel.send(a)
+  await ctx.channel.send(b)
+  await ctx.channel.send(c)
 
-  driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+  #driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-  query_txt_1 = a
+  '''query_txt_1 = a
   query_txt_2 = b
   query_txt_3 = c
 
@@ -78,6 +78,6 @@ async def 염색(ctx, *, txt):
 
   embed=discord.Embed(title=color_, description="", color=temperature)
   embed.set_footer(text=txt_1 + ('\n') + txt_2)
-  await ctx.send(embed=embed)
+  await ctx.send(embed=embed)'''
 
 client.run(os.environ['token'])
