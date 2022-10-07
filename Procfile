@@ -1,0 +1,1 @@
+worker: python Color_bot.py
