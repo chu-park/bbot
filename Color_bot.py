@@ -75,8 +75,13 @@ async def 염색(ctx, *, txt):
   txt_1 = txt_xpath_1.text
   txt_2 = txt_xpath_2.text
 
-  embed=discord.Embed(title=color_, description="", color=discord.Color.random())
-  embed.set_footer(text=txt_1 + ('\n') + txt_2)
-  await ctx.send(embed=embed)
+  await ctx.channel.send(color_)
+  await ctx.channel.send(temperature)
+  await ctx.channel.send(txt_1)
+  await ctx.channel.send(txt_2)
+
+  #embed=discord.Embed(title=color_, description="", color=discord.Color.random())
+  #embed.set_footer(text=txt_1 + ('\n') + txt_2)
+  #await ctx.send(embed=embed)
 
 client.run(os.environ['token'])
