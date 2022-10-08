@@ -50,7 +50,7 @@ async def 염색(ctx, *, txt):
 
   driver.get("https://www.google.co.kr")
   time.sleep(2)
-  await ctx.channel.send(driver.page_source)
+  print(driver.page_source)
 
   
 
