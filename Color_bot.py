@@ -48,7 +48,7 @@ async def 염색(ctx, *, txt):
   await ctx.channel.send(b)
   await ctx.channel.send(c)
 
-  driver.get("https://harp.fantazm.net/dye")
+  driver.get("https://www.google.co.kr/")
   time.sleep(2)
   await ctx.channel.send(driver.page_source)
 
