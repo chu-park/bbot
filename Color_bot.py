@@ -43,6 +43,10 @@ async def 염색(ctx, *, txt):
   query_txt_3 = c
 
   driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+  
+  await ctx.channel.send(a)
+  await ctx.channel.send(b)
+  await ctx.channel.send(c)
 
   driver.get("https://harp.fantazm.net/dye")
   time.sleep(2)
