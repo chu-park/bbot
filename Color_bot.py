@@ -34,9 +34,13 @@ async def on_ready():
 async def 염색(ctx, *, txt):
   a, b, c = txt.split(".")
 
-  await ctx.channel.send(a)
-  await ctx.channel.send(b)
-  await ctx.channel.send(c)
+  #await ctx.channel.send(a)
+  #await ctx.channel.send(b)
+  #await ctx.channel.send(c)
+
+  query_txt_1 = a
+  query_txt_2 = b
+  query_txt_3 = c
 
   driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
